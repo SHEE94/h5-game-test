@@ -58,8 +58,8 @@
                 studyMenuList:prop.assets.studyMenuList,
                 width:this.width,
                 height:this.height,
-                // x:this.width,
-                // visible: false
+                x:this.width,
+                visible: false
             }).addTo(this);
 
             //模拟白天黑夜动画
@@ -96,6 +96,7 @@
             this.menuScene.getChildById('btnView').getChildById('tab_1').on(Hilo.event.POINTER_START, function (e) {
                 e.stopImmediatePropagation && e.stopImmediatePropagation();
                 this.hideMenu();
+                this.studyScene.visible = true;
                 Hilo.Tween.to(this.studyScene,{
                     x:0
                 },{
