@@ -69,9 +69,18 @@
                 stage:this.stage,
                 assets:this.asset,
                 width: this.width,
-                height: this.height
+                height: this.height,
+                visible:false
             }).addTo(this.stage);
             console.log(this.mainScene.getChildById('mainScene').topView.getChildById('year') )
+            this.eventC();
+        },
+        eventC:function(){
+            let that = this;
+            this.readyScene.getChildById('start').on(Hilo.event.POINTER_START, function (e) {
+                e.stopImmediatePropagation && e.stopImmediatePropagation();
+                this.mainScene.visible = true;
+            }.bind(this));
         },
         onUpdate: function (dt) {
             this.time();

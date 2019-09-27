@@ -25,6 +25,7 @@
             }).addTo(this);
             //开始按钮
             this.startBtn = new Hilo.Button({
+                id:'start',
                 image: prop.btn,
                 upState: {rect:[580, 785, 370, 100]},
                 overState: {rect:[580, 920, 370, 100]},
